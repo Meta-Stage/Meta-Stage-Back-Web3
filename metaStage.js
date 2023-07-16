@@ -11,6 +11,7 @@ import { consoleBar, timeLog } from './lib/common.js';
 import { ping } from './controller/system.js';
 import { getNftCount } from './controller/blockchain.js';
 import { startListeningTransfer } from './controller/eventListening.js';
+import { getNftInfo } from './lib/db.js';
 
 // ------------------ router set -----------------
 
@@ -26,6 +27,7 @@ const router = express.Router();
 
 router.route('/ping').get(ping);
 router.route('/nft-count').get(getNftCount);
+router.route('/nft-info').get(getNftInfo);
 
 
 // ----------------- listener -------------------

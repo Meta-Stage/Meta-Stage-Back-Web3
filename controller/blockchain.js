@@ -15,35 +15,35 @@ const contract = new web3.eth.Contract(contractAbi, contractAddress);
 
 // --------- getTokenMetaData ---------
 
-const getMetadataByTokenIdWithContract = async (tokenId, results) => {
-    try {
-        const metadata = await contract.methods.tokenURI(tokenId).call();
-        return metadata;
-    } catch (err) {
-        results.error.push('index = '+ i + ', tokenId = ' + tokenId + ', tokenURI Error');
-    }
-    return null;
+const getMetadataByTokenIdWithContract = async (contract, tokenId, results) => {
+  try {
+    const metadata = await contract.methods.tokenURI(tokenId).call();
+    return metadata;
+  } catch (err) {
+    results.error.push('tokenId = ' + tokenId + ', tokenURI Error');
+  }
+  return null;
 }
 
 // --------[Get] nft-count ----------
 
 const getNftCount = async (req, res) => {
-    const results = {};
-    results.result = true;
-    results.error = [];
-    let nftCount = 0;
+  const results = {};
+  results.result = true;
+  results.error = [];
+  let nftCount = 0;
 
-    try {
-        nftCount = await contract.methods.totalSupply().call();
-        results.nftCount = Number(nftCount);
-    } catch (err) {
-        results.result = false;
-        results.error.push('[ETH] getNftCount Error');
-    }
+  try {
+    nftCount = await contract.methods.totalSupply().call();
+    results.nftCount = Number(nftCount);
+  } catch (err) {
+    results.result = false;
+    results.error.push('[ETH] getNftCount Error');
+  }
 
-    res.send(results);
-    consoleBar();
-    timeLog('GET nft-count called // ' + JSON.stringify(req.query) + ' // ' + JSON.stringify(results));
+  res.send(results);
+  consoleBar();
+  timeLog('GET nft-count called // ' + JSON.stringify(req.query) + ' // ' + JSON.stringify(results));
 };
 
 export { getMetadataByTokenIdWithContract, getNftCount };

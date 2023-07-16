@@ -8,8 +8,9 @@ import { readFile } from 'fs/promises';
 import { consoleBar, timeLog, resSend } from "../lib/common.js";
 import { writeDbMintTicket } from '../lib/db.js';
 import { getMetadataByTokenIdWithContract } from './blockchain.js';
-import { getTokenInfoByMetadataWithIpfs, getImageUrlByImageIpfsWithIpfs } from '../lib/ipfs.js';
+import { getTokenInfoByMetadataWithIpfs } from '../lib/ipfs.js';
 import { decodeTrxTransfer4 } from '../lib/contract.js';
+import { writeDbTokenInfo } from '../lib/db.js';
 
 // ------------------------------------------------------------------------------
 
@@ -25,9 +26,7 @@ const contract = new web3.eth.Contract(contractAbi, contractAddress);
 const getTokenMetaData = async (tokenId, results) => {
   const metadata = await getMetadataByTokenIdWithContract(contract, tokenId, results);  // tokenId -> metadataIpfs
   const info = await getTokenInfoByMetadataWithIpfs(metadata, results);  // medadataIpfs -> name, descr, imageIpfs
-  const imageUrl = await getImageUrlByImageIpfsWithIpfs(info.tokenImageIpfs, results);  // imageIpfs -> imageUrl
-  info.tokenIpfs = metadata;
-  info.tokenImageUrl = imageUrl;
+  info.tokenImageUrl;
   return info;
 }
 // ------------------------------------------------------------------------------
@@ -61,7 +60,7 @@ const startListeningTransfer = () => {
         }
 
         const tokenInfo = await getTokenMetaData(tokenId, results);
-        writeDbTicketUri(tokenId, tokenInfo, results);
+        writeDbTokenInfo(tokenId, tokenInfo, results);
 
         results.tokenId = tokenId;
         results.mintBlockNumber = mintBlockNumber;

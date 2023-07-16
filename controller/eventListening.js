@@ -40,8 +40,8 @@ const startListeningTransfer = () => {
                     results.error.push('writeDbMintTicket Error');
                 }
 
-                const tokenUri = await getTokenMetaData(tokenId, results);
-                writeDbTicketUri(tokenId, tokenUri, results);
+                //const tokenUri = await getTokenMetaData(tokenId, results);
+                //writeDbTicketUri(tokenId, tokenUri, results);
 
                 results.tokenId = tokenId;
                 results.mintBlockNumber = mintBlockNumber;

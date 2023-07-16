@@ -45,4 +45,4 @@ const getNftCount = async (req, res) => {
     timeLog('GET nft-count called // ' + JSON.stringify(req.query) + ' // ' + JSON.stringify(results));
 };
 
-export { getTokenMetaData, getNftCount };
+export { getNftCount };

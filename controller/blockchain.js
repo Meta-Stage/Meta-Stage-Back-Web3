@@ -13,6 +13,19 @@ const contractAddress = config.ADDRESS.CONTRACT;
 const contractAbi = JSON.parse(await readFile(new URL('../lib/contract-abi.json', import.meta.url)));
 const contract = new web3.eth.Contract(contractAbi, contractAddress);
 
+// --------- getTokenMetaData ---------
+
+// const getTokenMetaData = async (tokenId, results) => {
+//     try {
+//         const metadata = await contract.methods.tokenURI
+//     }
+// }
+
+
+
+
+// --------[Get] nft-count ----------
+
 const getNftCount = async (req, res) => {
     const results = {};
     results.result = true;
@@ -32,4 +45,4 @@ const getNftCount = async (req, res) => {
     timeLog('GET nft-count called // ' + JSON.stringify(req.query) + ' // ' + JSON.stringify(results));
 };
 
-export { getNftCount };
+export { getTokenMetaData, getNftCount };

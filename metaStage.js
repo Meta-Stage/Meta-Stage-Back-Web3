@@ -32,7 +32,7 @@ router.route('/nft-count').get(getNftCount);
 
 // ---------------- server start -----------------
 
-app.use('/meta-stage/api/v1', router);
+app.use('/meta-stage-web3/api/v1', router);
 app.listen(serverPort);
 consoleBar();
 timeLog('Test Server Started');

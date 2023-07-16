@@ -15,14 +15,15 @@ const contract = new web3.eth.Contract(contractAbi, contractAddress);
 
 // --------- getTokenMetaData ---------
 
-// const getTokenMetaData = async (tokenId, results) => {
-//     try {
-//         const metadata = await contract.methods.tokenURI
-//     }
-// }
-
-
-
+const getMetadataByTokenIdWithContract = async (tokenId, results) => {
+    try {
+        const metadata = await contract.methods.tokenURI(tokenId).call();
+        return metadata;
+    } catch (err) {
+        results.error.push('index = '+ i + ', tokenId = ' + tokenId + ', tokenURI Error');
+    }
+    return null;
+}
 
 // --------[Get] nft-count ----------
 
@@ -45,4 +46,4 @@ const getNftCount = async (req, res) => {
     timeLog('GET nft-count called // ' + JSON.stringify(req.query) + ' // ' + JSON.stringify(results));
 };
 
-export { getNftCount };
+export { getMetadataByTokenIdWithContract, getNftCount };

@@ -7,12 +7,30 @@ import config from '../config/config.js';
 import { readFile } from 'fs/promises';
 import { consoleBar, timeLog, resSend } from "../lib/common.js";
 import { writeDbMintTicket } from '../lib/db.js';
+import { getMetadataByTokenIdWithContract } from './blockchain.js';
+import { getTokenInfoByMetadataWithIpfs, getImageUrlByImageIpfsWithIpfs } from '../lib/ipfs.js';
+
+// ------------------------------------------------------------------------------
 
 const web3 = new Web3(process.env.WEB_ALCHEMY);
 const contractAddress = config.ADDRESS.CONTRACT;
 const mintAddress = config.ADDRESS.MINT;
 const contractAbi = JSON.parse(await readFile(new URL('../lib/contract-abi.json', import.meta.url)));
 const contract = new web3.eth.Contract(contractAbi, contractAddress);
+
+// ------------------------------------------------------------------------------
+
+const getTokenMetaData = async (tokenId, results) => {
+    const metadata = await getMetadataByTokenIdWithContract(contract, tokenId, results);  // tokenId -> metadataIpfs
+    const info = await getTokenInfoByMetadataWithIpfs(metadata, results);  // medadataIpfs -> name, descr, imageIpfs
+    const imageUrl = await getImageUrlByImageIpfsWithIpfs(info.tokenImageIpfs, results);  // imageIpfs -> imageUrl
+    info.tokenIpfs = metadata;
+    info.tokenImageUrl = imageUrl;
+    return info;
+}
+// ------------------------------------------------------------------------------
+
+// event log filter: Transfer
 
 const optionsTransfer = {
     topics: [
@@ -34,20 +52,20 @@ const startListeningTransfer = () => {
                 const userAddress = transaction.to;
                 const mintBlockNumber = event.blockNumber;
 
-                try{
+                try {
                     await writeDbMintTicket(tokenId, userAddress, results);
                 } catch (err) {
                     results.error.push('writeDbMintTicket Error');
                 }
 
-                //const tokenUri = await getTokenMetaData(tokenId, results);
-                //writeDbTicketUri(tokenId, tokenUri, results);
+                const tokenInfo = await getTokenMetaData(tokenId, results);
+                writeDbTicketUri(tokenId, tokenInfo, results);
 
                 results.tokenId = tokenId;
                 results.mintBlockNumber = mintBlockNumber;
-                results.tokenUri = tokenUri;
+                results.tokenUri = tokenInfo;
                 consoleBar();
-                timeLog('EVENTLISTENING mint-ticket // '+ JSON.stringify(results));
+                timeLog('EVENTLISTENING mint-ticket // ' + JSON.stringify(results));
             }
         }
     });
@@ -56,4 +74,4 @@ const startListeningTransfer = () => {
     listenerForMint.on('connected', nr => timeLog('Subscription on mint ticket started with ID' + nr));
 }
 
-export { listenerForMint };
+export { startListeningTransfer };

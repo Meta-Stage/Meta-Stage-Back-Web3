@@ -43,7 +43,6 @@ const optionsTransfer = {
 const startListeningTransfer = () => {
   const listenerForMint = web3.eth.subscribe('logs', optionsTransfer);
   listenerForMint.on('data', async event => {
-    console.log(event);
     if (event.address == contractAddress) {
       const transaction = decodeTrxTransfer4(web3, event.data, event.topics);
       if (transaction.from == mintAddress) {

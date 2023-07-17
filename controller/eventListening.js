@@ -6,10 +6,10 @@ import Web3 from 'web3';
 import config from '../config/config.js';
 import { readFile } from 'fs/promises';
 import { consoleBar, timeLog, resSend } from "../lib/common.js";
-import { writeDbIsRegistered, writeDbMintTicket } from '../lib/db.js';
+import { writeDbIsRegistered, writeDbMintTicket, writeDbUnregister } from '../lib/db.js';
 import { getMetadataByTokenIdWithContract } from './blockchain.js';
 import { getTokenInfoByMetadataWithIpfs } from '../lib/ipfs.js';
-import { decodeTrxRegister, decodeTrxTransfer4, decodeTrxUnlock } from '../lib/contract.js';
+import { decodeTrxRegister, decodeTrxTransfer4, decodeTrxUnlock, decodeTrxUnregister } from '../lib/contract.js';
 import { writeDbTicketInfo, writeDbPhotoCardInfo, writeDbPhotoOpened } from '../lib/db.js';
 
 // ------------------------------------------------------------------------------
@@ -143,7 +143,7 @@ const startListeningRegister = () => {
       const tokenId = transaction.tokenId;
 
       try {
-        await writeDbIsRegistered(results);
+        await writeDbIsRegistered(results, tokenId);
       } catch (err) {
         results.error.push('writeDbPhotoOpened Error');
       }
@@ -156,8 +156,45 @@ const startListeningRegister = () => {
     }
   });
   listenerForRegister.on('error', err => timeLog(err));
-  listenerForRegister.on('connected', nr => timeLog('Subscription on unlock ticket started with ID' + nr));
-
+  listenerForRegister.on('connected', nr => timeLog('Subscription on register started with ID' + nr));
 }
 
-export { startListeningTransfer, startListeningUnlock, startListeningRegister };
+// ------------------------------------------------------------------------------
+
+// event log filter: Unregister
+
+const optionsUnregister = {
+  topics: [
+    web3.utils.sha3('UnregisterNFT(uint256)')
+  ]
+};
+
+const startListeningUnregister = () => {
+  const listenerForUnregister = web3.eth.subscribe('logs', optionsUnregister);
+  listenerForUnregister.on('data', async event => {
+    if(event.address == contractAddress) {
+      const transaction = decodeTrxUnregister(web3, event.data, event.topics);
+
+      const results = {};
+      results.result = true;
+      results.error = [];
+
+      const tokenId = transaction.tokenId;
+
+      try {
+        await writeDbUnregister(results, tokenId);
+      } catch (err) {
+        results.error.push('writeDbUnregister Error');
+      }
+
+      results.tokenId = tokenId;
+
+      consoleBar();
+      timeLog('EVENTLISTENING UnregisterNFT // ' + JSON.stringify(results));
+    }
+  });
+  listenerForUnregister.on('error', err => timeLog(err));
+  listenerForUnregister.on('connected', nr => timeLog('Subscription on unregister started with ID' + nr));
+}
+
+export { startListeningTransfer, startListeningUnlock, startListeningRegister, startListeningUnregister };

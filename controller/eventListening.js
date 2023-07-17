@@ -9,8 +9,8 @@ import { consoleBar, timeLog, resSend } from "../lib/common.js";
 import { writeDbMintTicket } from '../lib/db.js';
 import { getMetadataByTokenIdWithContract } from './blockchain.js';
 import { getTokenInfoByMetadataWithIpfs } from '../lib/ipfs.js';
-import { decodeTrxTransfer4 } from '../lib/contract.js';
-import { writeDbTokenInfo } from '../lib/db.js';
+import { decodeTrxTransfer4, decodeTrxUnlock } from '../lib/contract.js';
+import { writeDbTicketInfo, writeDbPhotoOpened } from '../lib/db.js';
 
 // ------------------------------------------------------------------------------
 
@@ -60,7 +60,7 @@ const startListeningTransfer = () => {
         }
 
         const tokenInfo = await getTokenMetaData(tokenId, results);
-        writeDbTokenInfo(tokenId, tokenInfo, results);
+        writeDbTicketInfo(tokenId, tokenInfo, results);
 
         results.tokenId = tokenId;
         results.mintBlockNumber = mintBlockNumber;
@@ -75,4 +75,49 @@ const startListeningTransfer = () => {
   listenerForMint.on('connected', nr => timeLog('Subscription on mint ticket started with ID' + nr));
 }
 
-export { startListeningTransfer };
+// ------------------------------------------------------------------------------
+
+// event log filter: unLock
+
+const optionsUnlock = {
+  topics: [
+    web3.utils.sha3('unLock(uint256)')
+  ]
+};
+
+const startListeningUnlock = () => {
+  const listenerForUnlock = web3.eth.subscribe('logs', optionsUnlock);
+  listenerForUnlock.on('data', async event => {
+    if (event.address = contractAddress) {
+      const transaction = decodeTrxUnlock(web3, event.data, event.topics);
+
+
+      const results = {};
+      results.result = true;
+      results.error = [];
+
+      const tokenCount = transaction.tokenIndex;
+
+      try {
+        await writeDbPhotoOpened(results);
+      } catch (err) {
+        results.error.push('writeDbPhotoOpened Error');
+      }
+
+      results.tokenCount = tokenCount;
+
+      for (let i = 0; i < tokenCount; i++){
+        const tokenInfo = await getTokenMetaData(i, results);
+        writeDbPhotoCardInfo(tokenId, tokenInfo, results);
+      }
+
+      consoleBar();
+      timeLog('EVENTLISTENING unLock-ticket // ' + JSON.stringify(results));
+    }
+  });
+  listenerForUnlock.on('error', err => timeLog(err));
+  listenerForUnlock.on('connected', nr => timeLog('Subscription on unlock ticket started with ID' + nr));
+
+}
+
+export { startListeningTransfer, startListeningUnlock };

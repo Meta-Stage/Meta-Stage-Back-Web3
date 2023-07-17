@@ -108,7 +108,7 @@ const startListeningUnlock = () => {
 
       for (let i = 0; i < tokenCount; i++){
         const tokenInfo = await getTokenMetaData(i, results);
-        writeDbPhotoCardInfo(tokenId, tokenInfo, results);
+        writeDbPhotoCardInfo(i, tokenInfo, results);
       }
 
       consoleBar();

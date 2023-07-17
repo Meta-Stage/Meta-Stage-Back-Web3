@@ -1,4 +1,21 @@
 # Meta-Stage-Back-Web3
-Stage 너머의 Stage 
-![스크린샷 2023-07-17 오후 9 27 23](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/85336feb-fdba-421a-8d4d-d2939eb486ac)
+## Stage 너머의 Stage 
+### 2023 여름 몰입캠프 3주차
+![block_logo_ms](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/df0605be-c8a7-4677-84e7-ed2e9824feb1)
+![whitw_logo_ms](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/c890af37-7947-4eb0-a8a5-d90f455d8dc6)
+
+## 팀원
+- 박근원 <a href="https://github.com/RootPark" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
+- 정연오 <a href="https://github.com/yeono000" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
+- 박진아 <a href="https://github.com/pja9362" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
+
+
+## 기술 스택
+- Front-end : React.js
+- Back-end : nest.js, node.js, MySQL
+- Contract : Solidity (Ethereum)
+
+## About Project
+
+![스크린샷 2023-07-17 오후 9 46 40](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/3a671c4b-034c-4b5f-b178-6568c08e7d1e)
 ![스크린샷 2023-07-17 오후 9 40 42](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/f9b78159-1f34-4d00-9559-9f594bfc4ffe)

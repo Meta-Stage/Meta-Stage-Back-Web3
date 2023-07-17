@@ -16,6 +16,13 @@
 - Contract : Solidity (Ethereum)
 
 ## About Project
+### Stage 너머의 Stage, 가장 안전하고 즐거운 티켓팅 서비스 Meta Stage를 만나보세요.
 
+
+## Technical Architecture
+> Meta Stage는 완벽한 탈 중앙화를 지향합니다. 저희는 어떤 사용자 개인정보도 저장하지 않는 아키텍쳐를 구현했습니다.
+> 가장 범용성이 높은 Ethereum 네트워크를 지원합니다.
 ![스크린샷 2023-07-17 오후 9 46 40](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/3a671c4b-034c-4b5f-b178-6568c08e7d1e)
+
+## User Flow
 ![스크린샷 2023-07-17 오후 9 40 42](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/f9b78159-1f34-4d00-9559-9f594bfc4ffe)

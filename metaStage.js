@@ -10,7 +10,7 @@ import config from './config/config.js';
 import { consoleBar, timeLog } from './lib/common.js';
 import { ping } from './controller/system.js';
 import { getNftCount } from './controller/blockchain.js';
-import { startListeningTransfer, startListeningUnlock } from './controller/eventListening.js';
+import { startListeningRegister, startListeningTransfer, startListeningUnlock } from './controller/eventListening.js';
 import { getNftInfo } from './lib/db.js';
 
 // ------------------ router set -----------------
@@ -34,6 +34,7 @@ router.route('/nft-info').get(getNftInfo);
 
 startListeningTransfer();
 startListeningUnlock();
+startListeningRegister();
 
 // ---------------- server start -----------------
 

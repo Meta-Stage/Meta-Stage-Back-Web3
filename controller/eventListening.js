@@ -6,10 +6,10 @@ import Web3 from 'web3';
 import config from '../config/config.js';
 import { readFile } from 'fs/promises';
 import { consoleBar, timeLog, resSend } from "../lib/common.js";
-import { writeDbMintTicket } from '../lib/db.js';
+import { writeDbIsRegistered, writeDbMintTicket } from '../lib/db.js';
 import { getMetadataByTokenIdWithContract } from './blockchain.js';
 import { getTokenInfoByMetadataWithIpfs } from '../lib/ipfs.js';
-import { decodeTrxTransfer4, decodeTrxUnlock } from '../lib/contract.js';
+import { decodeTrxRegister, decodeTrxTransfer4, decodeTrxUnlock } from '../lib/contract.js';
 import { writeDbTicketInfo, writeDbPhotoCardInfo, writeDbPhotoOpened } from '../lib/db.js';
 
 // ------------------------------------------------------------------------------
@@ -88,7 +88,7 @@ const optionsUnlock = {
 const startListeningUnlock = () => {
   const listenerForUnlock = web3.eth.subscribe('logs', optionsUnlock);
   listenerForUnlock.on('data', async event => {
-    if (event.address = contractAddress) {
+    if (event.address == contractAddress) {
       const transaction = decodeTrxUnlock(web3, event.data, event.topics);
 
 
@@ -106,7 +106,7 @@ const startListeningUnlock = () => {
 
       results.tokenCount = tokenCount;
 
-      for (let i = 0; i < tokenCount; i++){
+      for (let i = 0; i < tokenCount; i++) {
         const tokenInfo = await getTokenMetaData(i, results);
         writeDbPhotoCardInfo(i, tokenInfo, results);
       }
@@ -120,4 +120,44 @@ const startListeningUnlock = () => {
 
 }
 
-export { startListeningTransfer, startListeningUnlock };
+// ------------------------------------------------------------------------------
+
+// event log filter: Register
+
+const optionsRegister = {
+  topics: [
+    web3.utils.sha3('RegisterNFT(address,uint256)')
+  ]
+};
+
+const startListeningRegister = () => {
+  const listenerForRegister = web3.eth.subscribe('logs', optionsRegister);
+  listenerForRegister.on('data', async event => {
+    if (event.address == contractAddress) {
+      const transaction = decodeTrxRegister(web3, event.data, event.topics);
+
+      const results = {};
+      results.result = true;
+      results.error = [];
+
+      const tokenId = transaction.tokenId;
+
+      try {
+        await writeDbIsRegistered(results);
+      } catch (err) {
+        results.error.push('writeDbPhotoOpened Error');
+      }
+
+      results.tokenId = tokenId;
+      results.ownerAddress = transaction.from;
+
+      consoleBar();
+      timeLog('EVENTLISTENING RegisterNFT // ' + JSON.stringify(results));
+    }
+  });
+  listenerForRegister.on('error', err => timeLog(err));
+  listenerForRegister.on('connected', nr => timeLog('Subscription on unlock ticket started with ID' + nr));
+
+}
+
+export { startListeningTransfer, startListeningUnlock, startListeningRegister };

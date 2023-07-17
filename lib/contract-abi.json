@@ -126,12 +126,6 @@
     },
     {
         "anonymous": false,
-        "inputs": [],
-        "name": "Reset",
-        "type": "event"
-    },
-    {
-        "anonymous": false,
         "inputs": [
             {
                 "indexed": true,
@@ -166,6 +160,12 @@
             }
         ],
         "name": "UnregisterNFT",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [],
+        "name": "unLock",
         "type": "event"
     },
     {

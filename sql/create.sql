@@ -11,8 +11,8 @@ CREATE TABLE IF NOT EXISTS metastage.nftinfo (
     ownerAddress VARCHAR(45),
     ticketUri VARCHAR(200),
     photoUri VARCHAR(200),
-    photoOpened TINYINT(1),
-    isRegistered TINYINT(1),
+    photoOpened TINYINT(1) NOT NULL DEFAULT 0,
+    isRegistered TINYINT(1) NOT NULL DEFAULT 0,
     created DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
     updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
     PRIMARY KEY(tokenId)

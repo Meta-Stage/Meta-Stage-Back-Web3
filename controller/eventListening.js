@@ -10,7 +10,7 @@ import { writeDbMintTicket } from '../lib/db.js';
 import { getMetadataByTokenIdWithContract } from './blockchain.js';
 import { getTokenInfoByMetadataWithIpfs } from '../lib/ipfs.js';
 import { decodeTrxTransfer4, decodeTrxUnlock } from '../lib/contract.js';
-import { writeDbTicketInfo, writeDbPhotoOpened } from '../lib/db.js';
+import { writeDbTicketInfo, writeDbPhotoCardInfo, writeDbPhotoOpened } from '../lib/db.js';
 
 // ------------------------------------------------------------------------------
 

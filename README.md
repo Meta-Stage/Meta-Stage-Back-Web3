@@ -23,12 +23,6 @@
 - 포토카드는 거래가 가능하고, 원한다면 다른 사람에게 포토카드를 판매하여 팬 커뮤니티 참여 권한을 위임할 수 있습니다. (탈덕했더라도 걱정하지 마세요..!)
 - 게다가 NFT는 굉장히 귀여운 스타의 캐릭터 이미지로 등록되어 있습니다! 유일한 당신의 NFT를 획득해보세요.
 
-## Technical Architecture
-> Meta Stage는 완벽한 탈 중앙화를 지향합니다. 저희는 어떤 사용자 개인정보도 저장하지 않는 아키텍쳐를 구현했습니다.
-> 가장 범용성이 높은 Ethereum 네트워크를 지원합니다.
-
-![스크린샷 2023-07-18 오후 2 56 01](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/e85b1c8d-40d0-41ae-a148-6b4786cb667e)
-
 ## User Flow
 > 유저들은 콘서트 티켓을 NFT로 구매할 수 있습니다. 티켓 NFT는 거래를 할수 없게 Lock 되어있는 상태로 암표 거래를 사전에 차단할 수 있습니다. 
 > 공연이 종료되고 관리자가 공연 종료를 선언하면 유저들이 받은 티켓 NFT는 다이나믹하게 포토카드 NFT로 변경됩니다. 해당 포토카드는 유저간 거래가 가능합니다.
@@ -40,11 +34,17 @@
 
 ![스크린샷 2023-07-18 오후 2 56 33](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/6353afd7-6467-4ad6-b5bf-3da01f2f9a1d)
 
+## Technical Architecture
+> Meta Stage는 완벽한 탈 중앙화를 지향합니다. 저희는 어떤 사용자 개인정보도 저장하지 않는 아키텍쳐를 구현했습니다.
+> 가장 범용성이 높은 Ethereum 네트워크를 지원합니다.
+
+![스크린샷 2023-07-18 오후 2 56 01](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/e85b1c8d-40d0-41ae-a148-6b4786cb667e)
+
 
 ## 팀원
-- 박근원 <a href="https://github.com/RootPark" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
-- 정연오 <a href="https://github.com/yeono000" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
-- 박진아 <a href="https://github.com/pja9362" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
+- 박근원 : Blockchain / Back-end / Planning <a href="https://github.com/RootPark" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
+- 정연오 : Front-end / Back-end / Design <a href="https://github.com/yeono000" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
+- 박진아 : Front-end / Design <a href="https://github.com/pja9362" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
 
 ## 기술 스택
 - Front-end : React.js

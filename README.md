@@ -1,9 +1,8 @@
-# Meta Stage
+# ![whitw_logo_ms](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/c890af37-7947-4eb0-a8a5-d90f455d8dc6)
 ![Mask group](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/a8de1126-1ca7-404e-9ac6-b11f5025e852)
 ## Stage 너머의 Stage 
 ### 2023 여름 몰입캠프 3주차
 ![block_logo_ms](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/df0605be-c8a7-4677-84e7-ed2e9824feb1)
-![whitw_logo_ms](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/c890af37-7947-4eb0-a8a5-d90f455d8dc6)
 
 
 ## About Project

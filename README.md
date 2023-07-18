@@ -13,7 +13,7 @@
 ## 기술 스택
 - Front-end : React.js
 - Back-end : nest.js, node.js, MySQL
-- Contract : Solidity (Ethereum)
+- Contract : Solidity (Ethereum), EIP (ERC-165, ERC-721, ERC-5192, dynamicNFT 조합 및 변형)
 
 ## About Project
 ### Stage 너머의 Stage, 가장 안전하고 즐거운 티켓팅 서비스 Meta Stage를 만나보세요.
@@ -25,4 +25,6 @@
 ![스크린샷 2023-07-17 오후 9 46 40](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/3a671c4b-034c-4b5f-b178-6568c08e7d1e)
 
 ## User Flow
+> 유저들은 콘서트 티켓을 NFT로 구매할 수 있습니다. 티켓 NFT는 거래를 할수 없게 Lock 되어있는 상태로 암표 거래를 사전에 차단할 수 있습니다. 
+> 공연이 종료되고 관리자가 공연 종료를 선언하면 유저들이 받은 티켓 NFT는 다이나믹하게 포토카드 NFT로 변경됩니다. 해당 포토카드는 유저간 거래가 가능합니다.
 ![스크린샷 2023-07-17 오후 9 40 42](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/f9b78159-1f34-4d00-9559-9f594bfc4ffe)

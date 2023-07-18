@@ -4,28 +4,19 @@
 ![block_logo_ms](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/df0605be-c8a7-4677-84e7-ed2e9824feb1)
 ![whitw_logo_ms](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/c890af37-7947-4eb0-a8a5-d90f455d8dc6)
 
-## 팀원
-- 박근원 <a href="https://github.com/RootPark" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
-- 정연오 <a href="https://github.com/yeono000" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
-- 박진아 <a href="https://github.com/pja9362" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
-
-
-## 기술 스택
-- Front-end : React.js
-- Back-end : nest.js, node.js, MySQL
-- Contract : Solidity (Ethereum), EIP (ERC-165, ERC-721, ERC-5192, dynamicNFT 조합 및 변형)
 
 ## About Project
 ### Stage 너머의 Stage, 가장 안전하고 즐거운 티켓팅 서비스 Meta Stage를 만나보세요.
 > Meta Stage는 dynamic NFT (Non Fungible Token)을 활용한 콘서트 티켓팅 + 팬 커뮤니티 서비스 입니다.
 
-### 1. Stage :
+### 1. 🎬 Stage :
 > 콘서트 애매
 
 - 당신이 가장 사랑하는 스타의 콘서트를 가장 공정하고 안전한 NFT로 예매하세요!
 - NFT티켓은 변경, 조작, 중복구매, 매크로, 도용이 불가능하고 암표 거래도 불가능한 유일하고 이상적인 콘서트 티켓입니다.
 - NFT티켓의 가치는 단순한 티켓을 뛰어넘어 유일한 존재가치를 가집니다.
-### 2. Over the Stage :
+  
+### 2. 🎬 Over the Stage :
 > 콘서트가 끝난 후 새로운 Stage
 
 - 콘서트가 끝난 이후에 NFT는 다이나믹하게 스타의 포토카드로 변경됩니다! 변경된 포토카드는 스타와 함께하는 프라이빗 팬 커뮤니티에 등록할 수 있는 입장권이 됩니다.
@@ -50,8 +41,15 @@
 ![스크린샷 2023-07-18 오후 2 56 33](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/6353afd7-6467-4ad6-b5bf-3da01f2f9a1d)
 
 
+## 팀원
+- 박근원 <a href="https://github.com/RootPark" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
+- 정연오 <a href="https://github.com/yeono000" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
+- 박진아 <a href="https://github.com/pja9362" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
 
-
+## 기술 스택
+- Front-end : React.js
+- Back-end : nest.js, node.js, MySQL
+- Contract : Solidity (Ethereum), EIP (ERC-165, ERC-721, ERC-5192, dynamicNFT 조합 및 변형)
 
 
 ## Web3 초심자를 위한 Metamask 지갑 사용 방법 + 무료 Sepolia ETH 받기.

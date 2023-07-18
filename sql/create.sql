@@ -9,6 +9,8 @@ DROP TABLE IF EXISTS metastage.nftinfo;
 CREATE TABLE IF NOT EXISTS metastage.nftinfo (
     tokenId INT,
     ownerAddress VARCHAR(45),
+    nftName VARCHAR(50),
+    nftDescription VARCHAR(100),
     ticketUri VARCHAR(200),
     photoUri VARCHAR(200),
     photoOpened TINYINT(1) NOT NULL DEFAULT '0',

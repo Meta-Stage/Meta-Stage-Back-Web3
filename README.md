@@ -37,3 +37,11 @@
 ![스크린샷 2023-07-18 오후 2 56 33](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/6353afd7-6467-4ad6-b5bf-3da01f2f9a1d)
 
 
+
+
+
+
+## Web3 초심자를 위한 Metamask 지갑 사용 방법 + 무료 Sepolia ETH 받기.
+1. https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=ko 에서 순서에 맞게 메타마스크를 설치한다.
+2. https://www.alchemy.com/ 에 접속하여 Alchemy 회원 가입을 진행한다.
+3. https://sepoliafaucet.com/ 에 접속하여 자신의 메타마스크 지갑 주소 (0x 로 시작한다. 크롬 익스텐션에서 메타마스크를 켜고 로그인 한 뒤에 복사한다.)를 넣고 Send me ETH 버튼을 누른다.

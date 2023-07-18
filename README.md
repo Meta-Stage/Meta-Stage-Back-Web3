@@ -1,10 +1,9 @@
 # Meta Stage
-![Mask group](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/a8de1126-1ca7-404e-9ac6-b11f5025e852)
-## Stage 너머의 Stage 
-### 2023 여름 몰입캠프 3주차
 ![whitw_logo_ms](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/c890af37-7947-4eb0-a8a5-d90f455d8dc6)
 ![block_logo_ms](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/df0605be-c8a7-4677-84e7-ed2e9824feb1)
-
+## Stage 너머의 Stage 
+### 2023 여름 몰입캠프 3주차
+![Mask group](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/a8de1126-1ca7-404e-9ac6-b11f5025e852)
 
 ## About Project
 ### Stage 너머의 Stage, 가장 안전하고 즐거운 티켓팅 서비스 Meta Stage를 만나보세요.

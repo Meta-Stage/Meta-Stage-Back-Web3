@@ -6,7 +6,7 @@ import Web3 from 'web3';
 import config from '../config/config.js';
 import { readFile } from 'fs/promises';
 import { consoleBar, timeLog, resSend } from "../lib/common.js";
-import { writeDbIsRegistered, writeDbMintTicket, writeDbUnregister } from '../lib/db.js';
+import { writeDbIsRegistered, writeDbMintTicket, writeDbOwnerChange, writeDbUnregister } from '../lib/db.js';
 import { getMetadataByTokenIdWithContract } from './blockchain.js';
 import { getTokenInfoByMetadataWithIpfs } from '../lib/ipfs.js';
 import { decodeTrxRegister, decodeTrxTransfer4, decodeTrxUnlock, decodeTrxUnregister } from '../lib/contract.js';
@@ -45,6 +45,7 @@ const startListeningTransfer = () => {
     if (event.address == contractAddress) {
       const transaction = decodeTrxTransfer4(web3, event.data, event.topics);
       if (transaction.from == mintAddress) {
+        // When NFT is minting
         const results = {};
         results.result = true;
         results.error = [];
@@ -67,12 +68,37 @@ const startListeningTransfer = () => {
         results.tokenUri = tokenInfo;
         consoleBar();
         timeLog('EVENTLISTENING mint-ticket // ' + JSON.stringify(results));
+      } 
+      else {
+        // When NFT is transfer.
+
+        const results = {};
+        results.result = true;
+        results.error = [];
+
+        const tokenId = transaction.tokenId;
+        const fromAddress = transaction.from;
+        const userAddress = transaction.to;
+        const transferBlockNumber = event.blockNumber;
+
+        try {
+          await writeDbOwnerChange(results, userAddress, tokenId);
+        } catch (err) {
+          results.error.push('writeDbOwnerChange Error');
+        }
+
+        results.tokenId = tokenId;
+        results.transferBlockNumber = transferBlockNumber;
+        results.fromAddress = fromAddress;
+        results.toAddress = userAddress;
+        consoleBar();
+        timeLog('EVENTLISTENING transfer-photoCard // ' + JSON.stringify(results));
       }
     }
   });
 
   listenerForMint.on('error', err => timeLog(err));
-  listenerForMint.on('connected', nr => timeLog('Subscription on mint ticket started with ID' + nr));
+  listenerForMint.on('connected', nr => timeLog('Subscription on transfer NFT started with ID' + nr));
 }
 
 // ------------------------------------------------------------------------------

@@ -26,7 +26,6 @@ const contract = new web3.eth.Contract(contractAbi, contractAddress);
 const getTokenMetaData = async (tokenId, results) => {
   const metadata = await getMetadataByTokenIdWithContract(contract, tokenId, results);  // tokenId -> metadataIpfs
   const info = await getTokenInfoByMetadataWithIpfs(metadata, results);  // medadataIpfs -> name, descr, imageIpfs
-  info.tokenImageUrl;
   return info;
 }
 // ------------------------------------------------------------------------------

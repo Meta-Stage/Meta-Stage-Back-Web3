@@ -23,16 +23,17 @@
 > Meta Stage는 완벽한 탈 중앙화를 지향합니다. 저희는 어떤 사용자 개인정보도 저장하지 않는 아키텍쳐를 구현했습니다.
 > 가장 범용성이 높은 Ethereum 네트워크를 지원합니다.
 
-![스크린샷 2023-07-17 오후 9 46 40](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/3a671c4b-034c-4b5f-b178-6568c08e7d1e)
+![스크린샷 2023-07-18 오후 2 56 01](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/e85b1c8d-40d0-41ae-a148-6b4786cb667e)
 
 ## User Flow
 > 유저들은 콘서트 티켓을 NFT로 구매할 수 있습니다. 티켓 NFT는 거래를 할수 없게 Lock 되어있는 상태로 암표 거래를 사전에 차단할 수 있습니다. 
 > 공연이 종료되고 관리자가 공연 종료를 선언하면 유저들이 받은 티켓 NFT는 다이나믹하게 포토카드 NFT로 변경됩니다. 해당 포토카드는 유저간 거래가 가능합니다.
 
-![스크린샷 2023-07-17 오후 9 40 42](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/f9b78159-1f34-4d00-9559-9f594bfc4ffe)
+![스크린샷 2023-07-18 오후 2 56 14](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/ec83f193-6fac-440c-8ee8-89fcd6abf3a6)
 
 ## Photo Card NFT Traits
 > 포토카드 NFT는 총 50종류가 있고 해당 NFT는 다양한 특성들을 결합하여 확률에 따라 생성된 이미지를 활용합니다.
 
-![스크린샷 2023-07-18 오후 2 05 49](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/b80e5cef-4ae6-4ede-a5a1-f4577e086d0f)
+![스크린샷 2023-07-18 오후 2 56 33](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/6353afd7-6467-4ad6-b5bf-3da01f2f9a1d)
+
 

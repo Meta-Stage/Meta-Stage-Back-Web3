@@ -29,6 +29,12 @@
 
 ![스크린샷 2023-07-18 오후 2 56 14](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/ec83f193-6fac-440c-8ee8-89fcd6abf3a6)
 
+## Fan Community
+> 포토카드 NFT를 보유하고 있는 사람은 프라이빗 팬 커뮤니티에 참여할 수 있습니다.
+
+![스크린샷 2023-07-19 오전 2 36 04](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/b0cafa23-7ab9-4994-9f59-ec87f226b3b5)
+
+
 ## Photo Card NFT Traits
 > 포토카드 NFT는 총 50종류가 있고 해당 NFT는 다양한 특성들을 결합하여 확률에 따라 생성된 이미지를 활용합니다.
 

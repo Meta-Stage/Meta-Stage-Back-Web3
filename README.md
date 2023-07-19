@@ -52,9 +52,9 @@
 - Web Url : http://172.10.5.132/
 
 ## 팀원
-- 박근원 : Blockchain / Back-end / Planning <a href="https://github.com/RootPark" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
-- 정연오 : Front-end / Back-end / Design <a href="https://github.com/yeono000" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
-- 박진아 : Front-end / Design <a href="https://github.com/pja9362" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>
+- 박근원 <a href="https://github.com/RootPark" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a> : Blockchain / Back-end / Planning 
+- 정연오 <a href="https://github.com/yeono000" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a> : Front-end / Back-end / Design 
+- 박진아 <a href="https://github.com/pja9362" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a> : Front-end / Design 
 
 ## 기술 스택
 - Front-end : React.js

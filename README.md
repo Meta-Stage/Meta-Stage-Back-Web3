@@ -46,6 +46,10 @@
 
 ![스크린샷 2023-07-18 오후 2 56 01](https://github.com/Meta-Stage/Meta-Stage-Back-Web3/assets/43375122/e85b1c8d-40d0-41ae-a148-6b4786cb667e)
 
+## 서비스 정보
+- Contract : 0x0dF65886541A46f2DDC7A4ac1cDDDF2FF2846F1f
+- Explorer : https://sepolia.etherscan.io/address/0x0df65886541a46f2ddc7a4ac1cdddf2ff2846f1f#code
+- Web Url : http://172.10.5.132/
 
 ## 팀원
 - 박근원 : Blockchain / Back-end / Planning <a href="https://github.com/RootPark" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>

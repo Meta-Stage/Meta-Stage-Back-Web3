@@ -48,7 +48,7 @@
 
 ## 서비스 정보
 - Contract : 0x0dF65886541A46f2DDC7A4ac1cDDDF2FF2846F1f
-- Explorer : https://sepolia.etherscan.io/address/0x0df65886541a46f2ddc7a4ac1cdddf2ff2846f1f#code
+- Explorer : https://sepolia.etherscan.io/address/0x0df65886541a46f2ddc7a4ac1cdddf2ff2846f1f
 - Web Url : http://172.10.5.132/
 
 ## 팀원
